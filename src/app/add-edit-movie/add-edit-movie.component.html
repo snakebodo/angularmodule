@@ -1,0 +1,36 @@
+
+<mat-card class = "card-container-register">
+  <mat-card-content>
+    <div class="input-field">
+      <mat-form-field appearance="fill" class = "input-field-form">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Title" [formControl]="title" required>
+        <mat-error *ngIf="title.invalid">{{getErrorMessage(title)}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-field-register">
+      <mat-form-field appearance="fill" class = "input-field-form-register">
+        <mat-label>Director</mat-label>
+        <input matInput placeholder="Director" [formControl]="director" required>
+        <mat-error *ngIf="director.invalid">{{getErrorMessage(director)}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-field">
+      <mat-form-field appearance="fill" class = "input-field-form">
+        <mat-label>Description</mat-label>
+        <input matInput type = "Description" placeholder="Description" [formControl]="description" required>
+        <mat-error *ngIf="description.invalid">{{getErrorMessage(description)}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-field-reTypePassword">
+      <mat-form-field appearance="fill" class = "input-field-form-reTypePassword">
+        <mat-label>Year</mat-label>
+        <input matInput type = "Year" placeholder="year" [formControl]="year" required>
+        <mat-error *ngIf="year.invalid">{{getErrorMessage(year)}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class = "buttons-container-register">
+      <button mat-raised-button color="primary" >Save</button>
+          </div>
+  </mat-card-content>
+</mat-card>
