@@ -1,0 +1,13 @@
+<div class="div-list" >
+  <p>Lista filme</p>
+  <mat-card class="card-movie" *ngFor="let movie of movies">
+    <mat-card-content>
+      <p>Title: {{movie.title}}</p>
+      <p>Director: {{movie.director}}</p>
+      <p>Description: {{movie.description}}</p>
+      <p>Year: {{movie.year}}</p>
+    </mat-card-content>
+  </mat-card>
+
+
+</div>

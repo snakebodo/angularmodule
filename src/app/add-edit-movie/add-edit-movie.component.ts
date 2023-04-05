@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
+import {MovieModel} from "../models/movie.model";
+import {MovieService} from "../movie.service";
 
 @Component({
   selector: 'app-add-edit-movie',
@@ -12,10 +14,25 @@ export class AddEditMovieComponent {
   director = new FormControl('', [Validators.required]);
   year = new FormControl('', [Validators.required]);
 
+  constructor(private movieService : MovieService) {
+  }
+  onSave() : void {
+    let movie : MovieModel = {
+      title : this.title.getRawValue()!,
+      director : this.director.getRawValue()!,
+      description : this.description.getRawValue()!,
+      year : this.year.getRawValue()!
+    };
+    this.movieService.add(movie).then((response : any) =>{
+      console.log("response add");
+      console.log(response);
+    })
+    console.log(movie);
+  }
   getErrorMessage(formControl: FormControl) {
     if (formControl.hasError('required')) {
       return 'You must enter a value';
     }
-    return formControl.hasError('email') ? 'Not a valid email' : '';
+    return "";
   }
 }
