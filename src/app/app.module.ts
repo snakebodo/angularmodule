@@ -11,13 +11,15 @@ import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddEditMovieComponent } from './add-edit-movie/add-edit-movie.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     DashboardComponent,
-    AddEditMovieComponent
+    AddEditMovieComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,
