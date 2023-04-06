@@ -6,6 +6,8 @@
       <p>Director: {{movie.director}}</p>
       <p>Description: {{movie.description}}</p>
       <p>Year: {{movie.year}}</p>
+      <button mat-raised-button color="accent" (click)="onDelete(movie)">Delete</button>
+      <button mat-raised-button color="accent" (click)="onSelect(movie)">Edit</button>
     </mat-card-content>
   </mat-card>
 

@@ -48,7 +48,7 @@
       <div class="input-field-reTypePassword">
         <mat-form-field appearance="fill" class = "input-field-form-reTypePassword">
           <mat-label>Retype your password</mat-label>
-          <input matInput type = "retypePassword" placeholder="retypePassword" [formControl]="retypePassword" required>
+          <input matInput type = "password" placeholder="retypePassword" [formControl]="retypePassword" required>
           <mat-error *ngIf="retypePassword.invalid">{{getErrorMessage(retypePassword)}}</mat-error>
         </mat-form-field>
       </div>

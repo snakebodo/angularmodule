@@ -12,6 +12,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddEditMovieComponent } from './add-edit-movie/add-edit-movie.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MovieListComponent } from './movie-list/movie-list.component';
     MatCardModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
