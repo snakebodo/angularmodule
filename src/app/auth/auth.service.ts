@@ -14,7 +14,7 @@ export class AuthService {
     let body :any ={
       "email" :email,
     }
-    this.httpClient.post(`${environment.apiUrl}/api/auth/login`, body);
+    return this.httpClient.post(`${environment.apiUrl}/api/auth/login`, body).toPromise();
   }
   public register(userName:string, email:string, password:string, reTypePassword:string){
     let body :any ={
@@ -23,7 +23,7 @@ export class AuthService {
       "password" : password,
       "reTypePassword" : reTypePassword
     }
-    this.httpClient.post(`${environment.apiUrl}/api/auth/register`, body);
+    return this.httpClient.post(`${environment.apiUrl}/api/auth/register`, body).toPromise();
   }
 
 }

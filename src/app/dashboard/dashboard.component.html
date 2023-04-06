@@ -1,3 +1,5 @@
+<app-add-edit-movie [movieInput]="selectedMovie"></app-add-edit-movie>
 
-<app-add-edit-movie></app-add-edit-movie>
-<app-movie-list></app-movie-list>
+<app-movie-list (selectMovie)="onReceivedMovie($event)"></app-movie-list>
+
+

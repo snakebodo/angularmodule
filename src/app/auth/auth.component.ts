@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
 import {AuthService} from "./auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-auth',
@@ -14,12 +15,20 @@ export class AuthComponent {
   retypePassword = new FormControl('', [Validators.required]);
   viewType : string = "login";
 
-  constructor(private authService : AuthService){
+  constructor(private authService : AuthService, private router : Router){
   }
 
   onLogin() :void{
     console.log('login');
-    this.authService.logIn(this.email.getRawValue()!, this.password.getRawValue()!)
+    this.authService.logIn(this.email.getRawValue()!, this.password.getRawValue()!).then((response :any) =>{
+      console.log(response);
+      if(response.status == 200){
+        alert("Success logIn");
+        this.router.navigateByUrl("/dashboard");
+      }
+    }, (reason : any) =>{
+      console.log(reason.error);
+    });
   }
 
   onRegister(): void {
@@ -27,7 +36,10 @@ export class AuthComponent {
     this.authService.register(this.userName.getRawValue()!,
       this.email.getRawValue()!,
       this.password.getRawValue()!,
-      this.retypePassword.getRawValue()!)
+      this.retypePassword.getRawValue()!).then((response :any) =>{
+      console.log(response);
+      this.viewType = "login";
+    });
   }
   onViewTypeChange(viewType : string) : void{
     console.log("viewType : " + viewType);
